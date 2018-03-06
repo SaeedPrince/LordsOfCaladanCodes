@@ -1,0 +1,11 @@
+shoulder 	army
+chest 		army
+gloves 		army
+boots 		army
+pants 		army
+hood 		random
+hair 		random
+helmet		random
+face		random
+shild 		army
+weapon		random
