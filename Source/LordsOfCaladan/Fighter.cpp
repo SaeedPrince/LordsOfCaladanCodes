@@ -36,6 +36,7 @@ AFighter::AFighter()
 	//AttachOneComponent(Sword, "Sword_joint");
 }
 
+// Getters
 FString AFighter::GetType()
 {
 	return Type;
@@ -46,6 +47,17 @@ FString AFighter::GetRunner()
 	return Runner;
 }
 
+float AFighter::GetFireLookup()
+{
+	return FireLookup;
+}
+
+float AFighter::GetFireTurn()
+{
+	return FireTurn;
+}
+
+// Setters
 void AFighter::SetType(FString TypeToSet)
 {
 	Type = TypeToSet;
@@ -54,6 +66,16 @@ void AFighter::SetType(FString TypeToSet)
 void AFighter::SetRunner(FString RunnerToSet)
 {
 	Runner = RunnerToSet;
+}
+
+void AFighter::SetFireLookup(float LookupToSet)
+{
+	FireLookup = LookupToSet;
+}
+
+void AFighter::SetFireTurn(float TurnToSet)
+{
+	FireTurn = TurnToSet;
 }
 
 // Called when the game starts or when spawned
