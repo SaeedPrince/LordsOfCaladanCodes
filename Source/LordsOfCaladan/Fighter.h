@@ -29,24 +29,12 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Fighter|Runner")
 		FString GetRunner();
 
-	UFUNCTION(BlueprintPure, Category = "Fighter|Attack")
-		float GetFireLookup();
-
-	UFUNCTION(BlueprintPure, Category = "Fighter|Attack")
-		float GetFireTurn();
-
 	// Setters
 	UFUNCTION(BlueprintCallable, Category = "Fighter|Type")
 		void SetType(FString TypeToSet);
 
 	UFUNCTION(BlueprintCallable, Category = "Fighter|Runner")
 		void SetRunner(FString RunnerToSet);
-
-	UFUNCTION(BlueprintCallable, Category = "Fighter|Attack")
-		void SetFireLookup(float LookupToSet);
-
-	UFUNCTION(BlueprintCallable, Category = "Fighter|Attack")
-		void SetFireTurn(float TurnToSet);
 
 protected:
 	// Called when the game starts or when spawned
@@ -66,13 +54,5 @@ private:
 	// Variables
 	FString Type;
 	FString Runner;
-
-	// Need by animations
-	float FireLookup;
-	float FireTurn;
-	
-	// States
-	bool attack;
-	bool defend;
 
 };

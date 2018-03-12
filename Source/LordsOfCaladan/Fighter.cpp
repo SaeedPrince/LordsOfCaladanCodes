@@ -9,7 +9,7 @@
 #include "GameFramework/SpringArmComponent.h"
 
 
-// Sets default values
+// Class Constructor
 AFighter::AFighter()
 {
 	// Set size for collision capsule
@@ -47,16 +47,6 @@ FString AFighter::GetRunner()
 	return Runner;
 }
 
-float AFighter::GetFireLookup()
-{
-	return FireLookup;
-}
-
-float AFighter::GetFireTurn()
-{
-	return FireTurn;
-}
-
 // Setters
 void AFighter::SetType(FString TypeToSet)
 {
@@ -66,16 +56,6 @@ void AFighter::SetType(FString TypeToSet)
 void AFighter::SetRunner(FString RunnerToSet)
 {
 	Runner = RunnerToSet;
-}
-
-void AFighter::SetFireLookup(float LookupToSet)
-{
-	FireLookup = LookupToSet;
-}
-
-void AFighter::SetFireTurn(float TurnToSet)
-{
-	FireTurn = TurnToSet;
 }
 
 // Called when the game starts or when spawned

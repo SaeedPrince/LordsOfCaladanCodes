@@ -19,3 +19,16 @@ FString ULordsOfCaladanFunctionLibrary::GetPlayerStartType(class APlayerStart* p
 
 
 
+float ULordsOfCaladanFunctionLibrary::ClampFloat(float MustClamp, float Min, float Max)
+{
+	float retFloat = MustClamp;
+	if (retFloat > Max)
+	{
+		retFloat = Max;
+	}
+	else if (retFloat < Min)
+	{
+		retFloat = Min;
+	}
+	return retFloat;
+}

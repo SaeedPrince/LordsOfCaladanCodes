@@ -19,6 +19,8 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Character|Type")
 		static FString GetPlayerStartType(class APlayerStart* playerStart);
 
-	
+	UFUNCTION(BlueprintPure, Category = "Math|Clamp")
+		static float ClampFloat(float MustClamp, float Min, float Max);
+
 	
 };
