@@ -22,5 +22,18 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Math|Clamp")
 		static float ClampFloat(float MustClamp, float Min, float Max);
 
-	
+	UFUNCTION(BlueprintPure, Category = "Actor|Spawn")
+		static FTransform MakeSpawnTransform(class AActor* InputActor);
+
+	UFUNCTION(BlueprintPure, Category = "Pawn|Movement")
+		static FRotator MakeRotatorByZ(FRotator InputRotator);
+
+	UFUNCTION(BlueprintPure, Category = "Pawn|Movement")
+		static FVector GetForwardVector(FRotator InRot);
+
+	UFUNCTION(BlueprintPure, Category = "Pawn|Movement")
+		static FVector GetRightVector(FRotator InRot);
+
+	UFUNCTION(BlueprintPure, Category = "Pawn|Movement")
+		static FVector GetMovementVector(FRotator InputRotator, FString Direction);
 };

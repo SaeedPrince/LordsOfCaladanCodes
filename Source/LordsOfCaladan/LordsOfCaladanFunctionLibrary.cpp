@@ -1,7 +1,5 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
 #include "LordsOfCaladanFunctionLibrary.h"
-
 FString ULordsOfCaladanFunctionLibrary::GetPlayerStartType(class APlayerStart* playerStart)
 {
 	FString retString = "";
@@ -17,8 +15,6 @@ FString ULordsOfCaladanFunctionLibrary::GetPlayerStartType(class APlayerStart* p
 	return retString;
 }
 
-
-
 float ULordsOfCaladanFunctionLibrary::ClampFloat(float MustClamp, float Min, float Max)
 {
 	float retFloat = MustClamp;
@@ -31,4 +27,46 @@ float ULordsOfCaladanFunctionLibrary::ClampFloat(float MustClamp, float Min, flo
 		retFloat = Min;
 	}
 	return retFloat;
+}
+
+FTransform ULordsOfCaladanFunctionLibrary::MakeSpawnTransform(class AActor* InputActor)
+{
+	FTransform retTransform;
+	FVector ActorLocation = InputActor->GetActorLocation();
+	FRotator ActorRotation = InputActor->GetActorRotation();
+	FQuat ActorQuaternion = FQuat(ActorRotation);
+	retTransform.SetLocation(ActorLocation);
+	retTransform.SetRotation(ActorQuaternion);
+	return retTransform;
+}
+
+FRotator ULordsOfCaladanFunctionLibrary::MakeRotatorByZ(FRotator InputRotator)
+{
+	FRotator retRotator;
+	retRotator.Yaw = InputRotator.Yaw;
+	return retRotator;
+}
+
+FVector ULordsOfCaladanFunctionLibrary::GetForwardVector(FRotator InRot)
+{
+	return FRotationMatrix(InRot).GetScaledAxis(EAxis::X);
+}
+
+FVector ULordsOfCaladanFunctionLibrary::GetRightVector(FRotator InRot)
+{
+	return FRotationMatrix(InRot).GetScaledAxis(EAxis::Y);
+}
+
+FVector ULordsOfCaladanFunctionLibrary::GetMovementVector(FRotator InputRotator, FString Direction)
+{
+	FVector retVector;
+	if (Direction == "Forward")
+	{
+		retVector = GetForwardVector(InputRotator);
+	}
+	else if (Direction == "Right")
+	{
+		retVector = GetRightVector(InputRotator);
+	}
+	return retVector;
 }
