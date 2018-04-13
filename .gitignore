@@ -79,3 +79,13 @@ DerivedDataCache/*
 
 # Large map file
 Content/Maps/NewWorld.umap
+
+# Large Assets
+Content/Assets/StaticMeshes/Structure/SM_BeeKeeping.uasset
+Content/Assets/StaticMeshes/Structure/SM_Castle.uasset
+Content/Assets/StaticMeshes/Structure/SM_CattleFarm.uasset
+Content/Assets/StaticMeshes/Structure/SM_GoldCasting.uasset
+Content/Assets/StaticMeshes/Structure/SM_GuardHouse.uasset
+Content/Assets/StaticMeshes/Structure/SM_GuardTower.uasset
+Content/Assets/StaticMeshes/Structure/SM_SheepFarm.uasset
+
