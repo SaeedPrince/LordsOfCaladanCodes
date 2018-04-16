@@ -70,3 +70,23 @@ FVector ULordsOfCaladanFunctionLibrary::GetMovementVector(FRotator InputRotator,
 	}
 	return retVector;
 }
+
+FDateTime ULordsOfCaladanFunctionLibrary::AddOneScaledSecond(FDateTime InputTime)
+{
+	FDateTime retDateTime = InputTime;
+	FTimespan timeAdd;
+	int32 theHour;
+	int32 DayTimeScale = 144;
+	int32 NightTimeScale = 288;
+	theHour = InputTime.GetHour();
+	if (theHour < 7 || theHour > 17)
+	{
+		timeAdd = FTimespan(0, 0, NightTimeScale);
+	}
+	else
+	{
+		timeAdd = FTimespan(0, 0, DayTimeScale);
+	}
+	retDateTime += timeAdd;
+	return retDateTime;
+}

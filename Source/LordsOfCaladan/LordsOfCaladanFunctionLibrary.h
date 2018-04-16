@@ -36,4 +36,7 @@ public:
 
 	UFUNCTION(BlueprintPure, Category = "Pawn|Movement")
 		static FVector GetMovementVector(FRotator InputRotator, FString Direction);
+
+	UFUNCTION(BlueprintPure, Category = "Time|Addition")
+		static FDateTime AddOneScaledSecond(FDateTime InputTime);
 };
