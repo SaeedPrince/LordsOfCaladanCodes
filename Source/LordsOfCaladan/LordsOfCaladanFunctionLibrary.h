@@ -39,4 +39,7 @@ public:
 
 	UFUNCTION(BlueprintPure, Category = "Time|Addition")
 		static FDateTime AddOneScaledSecond(FDateTime InputTime);
+
+	UFUNCTION(BlueprintPure, Category = "Time|Convert")
+		static FString AlphabetMonth(int32 InputMonth);
 };

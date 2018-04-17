@@ -90,3 +90,48 @@ FDateTime ULordsOfCaladanFunctionLibrary::AddOneScaledSecond(FDateTime InputTime
 	retDateTime += timeAdd;
 	return retDateTime;
 }
+
+FString ULordsOfCaladanFunctionLibrary::AlphabetMonth(int32 InputMonth)
+{
+	FString retString = "";
+	switch (InputMonth)
+	{
+	case 1:
+		retString = "Jan";
+		break;
+	case 2:
+		retString = "Feb";
+		break;
+	case 3:
+		retString = "Mar";
+		break;
+	case 4:
+		retString = "Apr";
+		break;
+	case 5:
+		retString = "May";
+		break;
+	case 6:
+		retString = "Jun";
+		break;
+	case 7:
+		retString = "Jul";
+		break;
+	case 8:
+		retString = "Aug";
+		break;
+	case 9:
+		retString = "Sep";
+		break;
+	case 10:
+		retString = "Oct";
+		break;
+	case 11:
+		retString = "Nov";
+		break;
+	case 12:
+		retString = "Dec";
+		break;
+	}
+	return retString;
+}
