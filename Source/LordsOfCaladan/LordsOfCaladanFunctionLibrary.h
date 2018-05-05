@@ -16,14 +16,14 @@ class LORDSOFCALADAN_API ULordsOfCaladanFunctionLibrary : public UBlueprintFunct
 	GENERATED_BODY()
 	
 public:
+	UFUNCTION(BlueprintPure, Category = "Actor|Spawn")
+		static FTransform MakeSpawnTransform(class AActor* InputActor);
+
 	UFUNCTION(BlueprintPure, Category = "Character|Type")
 		static FString GetPlayerStartType(class APlayerStart* playerStart);
 
 	UFUNCTION(BlueprintPure, Category = "Math|Clamp")
 		static float ClampFloat(float MustClamp, float Min, float Max);
-
-	UFUNCTION(BlueprintPure, Category = "Actor|Spawn")
-		static FTransform MakeSpawnTransform(class AActor* InputActor);
 
 	UFUNCTION(BlueprintPure, Category = "Pawn|Movement")
 		static FRotator MakeRotatorByZ(FRotator InputRotator);
@@ -42,4 +42,5 @@ public:
 
 	UFUNCTION(BlueprintPure, Category = "Time|Convert")
 		static FString AlphabetMonth(int32 InputMonth);
+
 };

@@ -1,5 +1,17 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 #include "LordsOfCaladanFunctionLibrary.h"
+
+FTransform ULordsOfCaladanFunctionLibrary::MakeSpawnTransform(class AActor* InputActor)
+{
+	FTransform retTransform;
+	FVector ActorLocation = InputActor->GetActorLocation();
+	FRotator ActorRotation = InputActor->GetActorRotation();
+	FQuat ActorQuaternion = FQuat(ActorRotation);
+	retTransform.SetLocation(ActorLocation);
+	retTransform.SetRotation(ActorQuaternion);
+	return retTransform;
+}
+
 FString ULordsOfCaladanFunctionLibrary::GetPlayerStartType(class APlayerStart* playerStart)
 {
 	FString retString = "";
@@ -27,17 +39,6 @@ float ULordsOfCaladanFunctionLibrary::ClampFloat(float MustClamp, float Min, flo
 		retFloat = Min;
 	}
 	return retFloat;
-}
-
-FTransform ULordsOfCaladanFunctionLibrary::MakeSpawnTransform(class AActor* InputActor)
-{
-	FTransform retTransform;
-	FVector ActorLocation = InputActor->GetActorLocation();
-	FRotator ActorRotation = InputActor->GetActorRotation();
-	FQuat ActorQuaternion = FQuat(ActorRotation);
-	retTransform.SetLocation(ActorLocation);
-	retTransform.SetRotation(ActorQuaternion);
-	return retTransform;
 }
 
 FRotator ULordsOfCaladanFunctionLibrary::MakeRotatorByZ(FRotator InputRotator)
